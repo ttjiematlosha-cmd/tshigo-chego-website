@@ -67,7 +67,6 @@ svg {
   flex: 0 0 auto;
 }
 p,
-h1,
 h2,
 h3,
 strong,
@@ -77,6 +76,14 @@ button {
   overflow-wrap: break-word;
 }
 
+h1
+{
+  font-size: clamp(2.7rem, 6vw, 5.5rem);
+  line-height: 1.05;
+  margin-bottom: 0px;
+  font-weight: 800;
+}
+}
 .service-card,
 .service-body,
 .trust-item,
