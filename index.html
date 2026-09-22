@@ -1,399 +1,2498 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tshigo Chego | Braai Fuel & Equipment Hitstre</title>
-  <meta name="description" content="Tshigo Chego supplies firewood, briquettes and charcoal, plus trailer, mobile fridge and tent hire. Call or WhatsApp for quick quotes and delivery.">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tshigo Chego | Firewood, Charcoal & Equipment Hire</title>
+
+<meta name="description"
+content="Tshigo Chego provides firewood, charcoal, chairs, trailers, mobile fridge and tent hire for homes, funerals, weddings, parties, events and businesses.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#f4f3ee;
+    color:#10130f;
+    overflow-x:hidden;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea{
+    font:inherit;
+}
+
+:root{
+    --black:#10130f;
+    --dark:#171b17;
+    --cream:#f4f3ee;
+    --white:#ffffff;
+    --green:#b9d62c;
+    --green-dark:#8ca800;
+    --muted:#70736c;
+    --line:#d9d9d1;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    padding:18px 5%;
+    transition:.3s ease;
+}
+
+header.scrolled{
+    background:rgba(16,19,15,.94);
+    backdrop-filter:blur(15px);
+    padding:12px 5%;
+}
+
+.nav{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:white;
+}
+
+.logo-mark{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:var(--green);
+    color:var(--black);
+    display:grid;
+    place-items:center;
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+}
+
+.logo-text{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:700;
+    letter-spacing:.05em;
+}
+
+.logo-text small{
+    display:block;
+    font-family:"DM Sans",sans-serif;
+    font-size:9px;
+    letter-spacing:.15em;
+    opacity:.65;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    color:white;
+    font-size:14px;
+    font-weight:600;
+}
+
+.nav-links a{
+    opacity:.8;
+    transition:.25s;
+}
+
+.nav-links a:hover{
+    opacity:1;
+    color:var(--green);
+}
+
+.nav-cta{
+    background:var(--green);
+    color:var(--black)!important;
+    padding:13px 19px;
+    border-radius:100px;
+    opacity:1!important;
+}
+
+.menu-btn{
+    display:none;
+    width:45px;
+    height:45px;
+    border:1px solid rgba(255,255,255,.3);
+    border-radius:50%;
+    background:transparent;
+    cursor:pointer;
+}
+
+.menu-btn span{
+    display:block;
+    width:18px;
+    height:2px;
+    background:white;
+    margin:4px auto;
+    transition:.3s;
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu{
+    position:fixed;
+    inset:0;
+    background:#10130f;
+    z-index:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:translateY(-100%);
+    transition:.5s cubic-bezier(.77,0,.18,1);
+}
+
+.mobile-menu.active{
+    transform:translateY(0);
+}
+
+.mobile-menu nav{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+}
+
+.mobile-menu a{
+    color:white;
+    font-family:"Space Grotesk",sans-serif;
+    font-size:38px;
+    font-weight:600;
+}
+
+.mobile-menu a:hover{
+    color:var(--green);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    background:#10130f;
+    color:white;
+    position:relative;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    padding:130px 5% 70px;
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.08;
+    background-image:
+        linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);
+    background-size:80px 80px;
+}
+
+.hero-glow{
+    position:absolute;
+    width:600px;
+    height:600px;
+    border-radius:50%;
+    background:var(--green);
+    filter:blur(160px);
+    opacity:.13;
+    right:-150px;
+    top:100px;
+}
+
+.hero-inner{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    position:relative;
+    z-index:2;
+}
+
+.hero-layout{
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:70px;
+    align-items:center;
+}
+
+.eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    color:var(--green);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.eyebrow::before{
+    content:"";
+    width:35px;
+    height:2px;
+    background:var(--green);
+}
+
+.hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(55px,7vw,105px);
+    line-height:.88;
+    letter-spacing:-.065em;
+    max-width:850px;
+}
+
+.hero h1 span{
+    color:var(--green);
+}
+
+.hero-description{
+    max-width:570px;
+    color:#bfc3ba;
+    line-height:1.7;
+    font-size:17px;
+    margin:30px 0;
+}
+
+.hero-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    min-height:52px;
+    padding:0 22px;
+    border-radius:100px;
+    font-weight:700;
+    font-size:14px;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--green);
+    color:var(--black);
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+    background:#c9e849;
+}
+
+.btn-outline{
+    border:1px solid #444a42;
+    color:white;
+}
+
+.btn-outline:hover{
+    border-color:white;
+}
+
+
+/* HERO VISUAL */
+
+.hero-visual{
+    position:relative;
+    min-height:540px;
+}
+
+.hero-photo{
+    position:absolute;
+    width:82%;
+    height:480px;
+    right:0;
+    top:20px;
+    object-fit:cover;
+    border-radius:30px 30px 30px 100px;
+    filter:saturate(.85);
+}
+
+.hero-card{
+    position:absolute;
+    bottom:15px;
+    left:0;
+    width:240px;
+    background:white;
+    color:var(--black);
+    padding:25px;
+    border-radius:22px;
+    box-shadow:0 25px 70px rgba(0,0,0,.35);
+}
+
+.hero-card-number{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:42px;
+    font-weight:700;
+}
+
+.hero-card p{
+    font-size:13px;
+    color:var(--muted);
+    line-height:1.5;
+    margin-top:5px;
+}
+
+
+/* =========================================================
+   QUICK BAR
+========================================================= */
+
+.quick-bar{
+    background:var(--green);
+    padding:22px 5%;
+}
+
+.quick-inner{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.quick-item{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.quick-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:rgba(16,19,15,.1);
+    display:grid;
+    place-items:center;
+    font-weight:700;
+}
+
+.quick-item strong{
+    display:block;
+    font-size:14px;
+}
+
+.quick-item span{
+    font-size:12px;
+    opacity:.65;
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section{
+    padding:120px 5%;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:40px;
+    margin-bottom:60px;
+}
+
+.section-label{
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    color:var(--green-dark);
+    margin-bottom:14px;
+}
+
+.section h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(42px,5vw,72px);
+    line-height:.95;
+    letter-spacing:-.05em;
+}
+
+.section-head p{
+    max-width:430px;
+    color:var(--muted);
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   RENTAL CATALOGUE
+========================================================= */
+
+.catalogue{
+    background:var(--cream);
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:20px;
+}
+
+.product{
+    background:white;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid #e2e2db;
+    transition:.35s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+    box-shadow:0 25px 60px rgba(0,0,0,.1);
+}
+
+.product:nth-child(1),
+.product:nth-child(4){
+    grid-column:span 7;
+}
+
+.product:nth-child(2),
+.product:nth-child(3),
+.product:nth-child(5),
+.product:nth-child(6){
+    grid-column:span 5;
+}
+
+.product-image{
+    height:330px;
+    overflow:hidden;
+    position:relative;
+}
+
+.product:nth-child(2) .product-image,
+.product:nth-child(3) .product-image,
+.product:nth-child(5) .product-image,
+.product:nth-child(6) .product-image{
+    height:300px;
+}
+
+.product-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.product:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.product-tag{
+    position:absolute;
+    top:18px;
+    left:18px;
+    background:var(--green);
+    color:var(--black);
+    padding:8px 13px;
+    border-radius:100px;
+    font-size:10px;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.product-content{
+    padding:25px;
+}
+
+.product-content h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:30px;
+    letter-spacing:-.04em;
+}
+
+.product-content p{
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+    margin:10px 0 20px;
+    max-width:600px;
+}
+
+.product-actions{
+    display:flex;
+    gap:9px;
+}
+
+.small-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:11px 17px;
+    border-radius:100px;
+    font-size:12px;
+    font-weight:700;
+}
+
+.whatsapp{
+    background:#1c9d55;
+    color:white;
+}
+
+.call{
+    border:1px solid var(--line);
+}
+
+
+/* =========================================================
+   FEATURE SECTION
+========================================================= */
+
+.feature-section{
+    background:#10130f;
+    color:white;
+}
+
+.feature-layout{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:100px;
+    align-items:start;
+}
+
+.feature-intro{
+    position:sticky;
+    top:120px;
+}
+
+.feature-intro h2{
+    font-size:clamp(45px,5vw,75px);
+}
+
+.feature-intro p{
+    color:#aeb3a9;
+    line-height:1.7;
+    margin-top:25px;
+    max-width:440px;
+}
+
+.feature-list{
+    border-top:1px solid #333831;
+}
+
+.feature{
+    padding:30px 0;
+    border-bottom:1px solid #333831;
+    display:grid;
+    grid-template-columns:70px 1fr;
+    gap:25px;
+}
+
+.feature-number{
+    color:var(--green);
+    font-family:"Space Grotesk",sans-serif;
+    font-size:14px;
+}
+
+.feature h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:25px;
+}
+
+.feature p{
+    color:#969d93;
+    line-height:1.6;
+    margin-top:8px;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.process{
+    background:white;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.process-card{
+    background:#f5f5f0;
+    border-radius:25px;
+    padding:35px;
+    min-height:270px;
+    position:relative;
+}
+
+.process-number{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:70px;
+    color:#dfe1d9;
+    font-weight:700;
+}
+
+.process-card h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:25px;
+    margin-top:15px;
+}
+
+.process-card p{
+    color:var(--muted);
+    line-height:1.6;
+    margin-top:10px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.big-cta{
+    padding:110px 5%;
+    background:var(--green);
+}
+
+.cta-box{
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:50px;
+}
+
+.cta-box h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:clamp(45px,6vw,85px);
+    line-height:.9;
+    letter-spacing:-.06em;
+    max-width:800px;
+}
+
+.cta-box p{
+    max-width:470px;
+    margin-top:20px;
+    line-height:1.6;
+    opacity:.7;
+}
+
+.cta-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    min-width:210px;
+}
+
+.cta-buttons .btn{
+    background:var(--black);
+    color:white;
+}
+
+.cta-buttons .btn.secondary{
+    background:transparent;
+    color:var(--black);
+    border:1px solid rgba(16,19,15,.3);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    background:#f4f3ee;
+}
+
+.contact-layout{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:80px;
+}
+
+.contact-info h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:60px;
+    line-height:.95;
+    letter-spacing:-.05em;
+}
+
+.contact-info > p{
+    color:var(--muted);
+    line-height:1.7;
+    margin:25px 0 35px;
+    max-width:430px;
+}
+
+.phone-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.phone{
+    background:white;
+    border:1px solid var(--line);
+    border-radius:15px;
+    padding:16px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.phone span{
+    color:var(--muted);
+    font-size:12px;
+}
+
+.phone strong{
+    font-size:15px;
+}
+
+.quote-form{
+    background:white;
+    padding:40px;
+    border-radius:30px;
+    border:1px solid #dfdfd7;
+}
+
+.quote-form h3{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.field{
+    margin-bottom:15px;
+}
+
+.field label{
+    display:block;
+    font-size:11px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    margin-bottom:7px;
+}
+
+.field input,
+.field textarea,
+.field select{
+    width:100%;
+    border:1px solid var(--line);
+    background:#fafaf7;
+    padding:15px;
+    border-radius:12px;
+    outline:none;
+}
+
+.field textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+    border-color:var(--black);
+}
+
+.submit-btn{
+    width:100%;
+    border:0;
+    cursor:pointer;
+    background:var(--black);
+    color:white;
+}
+
+.submit-btn:hover{
+    background:#242a22;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer{
+    background:#10130f;
+    color:white;
+    padding:70px 5% 25px;
+}
+
+.footer-inner{
+    max-width:1400px;
+    margin:auto;
+}
+
+.footer-top{
+    display:flex;
+    justify-content:space-between;
+    gap:50px;
+    padding-bottom:60px;
+    border-bottom:1px solid #30352f;
+}
+
+.footer-brand h2{
+    font-family:"Space Grotesk",sans-serif;
+    font-size:42px;
+}
+
+.footer-brand p{
+    color:#899087;
+    max-width:400px;
+    margin-top:12px;
+    line-height:1.6;
+}
+
+.footer-links{
+    display:flex;
+    gap:50px;
+}
+
+.footer-links a{
+    color:#a7ada4;
+    font-size:13px;
+}
+
+.footer-links a:hover{
+    color:var(--green);
+}
+
+.footer-bottom{
+    padding-top:25px;
+    display:flex;
+    justify-content:space-between;
+    color:#656b63;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   FLOATING WHATSAPP
+========================================================= */
+
+.floating-whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:800;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#1c9d55;
+    color:white;
+    display:grid;
+    place-items:center;
+    font-weight:700;
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.floating-whatsapp:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+
+/* =========================================================
+   REVEAL
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero-layout{
+        grid-template-columns:1fr;
+    }
+
+    .hero-visual{
+        min-height:430px;
+    }
+
+    .hero-photo{
+        height:390px;
+    }
+
+    .feature-layout{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .feature-intro{
+        position:static;
+    }
+
+    .contact-layout{
+        grid-template-columns:1fr;
+    }
+
+    .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    header{
+        padding:13px 5%;
+    }
+
+    .logo-mark{
+        width:37px;
+        height:37px;
+    }
+
+    .logo-text{
+        font-size:13px;
+    }
+
+    .hero{
+        min-height:auto;
+        padding:120px 6% 55px;
+    }
+
+    .hero-layout{
+        text-align:center;
+    }
+
+    .eyebrow{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:53px;
+        line-height:.92;
+    }
+
+    .hero-description{
+        font-size:15px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .hero-actions{
+        justify-content:center;
+    }
+
+    .hero-visual{
+        min-height:330px;
+        margin-top:25px;
+    }
+
+    .hero-photo{
+        width:92%;
+        height:300px;
+        right:4%;
+        border-radius:25px;
+    }
+
+    .hero-card{
+        width:190px;
+        padding:17px;
+        left:0;
+        bottom:0;
+    }
+
+    .hero-card-number{
+        font-size:30px;
+    }
+
+    .quick-inner{
+        grid-template-columns:1fr;
+        gap:15px;
+    }
+
+    .quick-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .section{
+        padding:80px 6%;
+    }
+
+    .section-head{
+        display:block;
+        text-align:center;
+        margin-bottom:40px;
+    }
+
+    .section h2{
+        font-size:45px;
+    }
+
+    .section-head p{
+        margin:20px auto 0;
+    }
+
+    .products{
+        display:block;
+    }
+
+    .product{
+        margin-bottom:18px;
+    }
+
+    .product-image,
+    .product:nth-child(2) .product-image,
+    .product:nth-child(3) .product-image,
+    .product:nth-child(5) .product-image,
+    .product:nth-child(6) .product-image{
+        height:260px;
+    }
+
+    .product-content{
+        text-align:center;
+    }
+
+    .product-content p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .product-actions{
+        justify-content:center;
+    }
+
+    .feature-layout{
+        text-align:center;
+    }
+
+    .feature-intro p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .feature-list{
+        text-align:center;
+    }
+
+    .feature{
+        display:block;
+    }
+
+    .feature-number{
+        margin-bottom:10px;
+    }
+
+    .process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-card{
+        text-align:center;
+        min-height:auto;
+    }
+
+    .big-cta{
+        padding:80px 6%;
+        text-align:center;
+    }
+
+    .cta-box{
+        align-items:center;
+    }
+
+    .cta-box h2{
+        font-size:49px;
+    }
+
+    .cta-buttons{
+        width:100%;
+    }
+
+    .contact-layout{
+        text-align:center;
+    }
+
+    .contact-info h2{
+        font-size:48px;
+    }
+
+    .contact-info > p{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .phone{
+        text-align:left;
+    }
+
+    .quote-form{
+        padding:25px 18px;
+        text-align:left;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    footer{
+        text-align:center;
+    }
+
+    .footer-top{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .footer-links{
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:20px;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        gap:10px;
+    }
+
+    .mobile-menu a{
+        font-size:34px;
+    }
+
+    .floating-whatsapp{
+        width:55px;
+        height:55px;
+        right:18px;
+        bottom:18px;
+    }
+}
+
+</style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
 
 
-      
-      <a class="brand" href="#home" aria-label="Tshigo Chego home">
-        <span class="brand-mark"><i data-lucide="truck"></i></span>
-        <span class="brand-text">
-          <strong>TSHIGO CHEGO</strong>
-          <small>Firewood & Equipment Hire</small>
-        </span>
-      </a>
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-      <nav id="site-menu" class="nav-links" aria-label="Primary navigation">
+<header id="header">
+
+    <div class="nav">
+
+        <a href="#home" class="logo">
+
+            <div class="logo-mark">
+                TC
+            </div>
+
+            <div class="logo-text">
+                TSHIGO CHEGO
+                <small>FIREWOOD & EQUIPMENT HIRE</small>
+            </div>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#services">Services</a>
+            <a href="#why-us">Why Us</a>
+            <a href="#process">How It Works</a>
+            <a href="#contact">Contact</a>
+
+            <a
+                class="nav-cta"
+                href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20would%20like%20to%20make%20an%20enquiry."
+                target="_blank">
+                WhatsApp Us
+            </a>
+
+        </nav>
+
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     MOBILE MENU
+===================================================== -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <nav>
+
+        <a href="#home">Home</a>
         <a href="#services">Services</a>
-        <a href="#about">Why Us</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#process">How It Works</a>
         <a href="#contact">Contact</a>
-        <a class="mobile-nav-cta" href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20I%20would%20like%20a%20quote.">
-          <i data-lucide="message-circle"></i>
-          WhatsApp Us
+
+        <a
+            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20would%20like%20a%20quote."
+            target="_blank">
+            Get A Quote
         </a>
-      </nav>
 
-      <div class="header-actions">
-        <a class="btn btn-light header-call" href="tel:0822026522">
-          <i data-lucide="phone"></i>
-          082 202 6522
-        </a>
-        <a class="btn btn-primary" href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20I%20would%20like%20a%20quote.">
-          <i data-lucide="message-circle"></i>
-          WhatsApp
-        </a>
-      </div>
+    </nav>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
-        <i class="menu-icon" data-lucide="menu"></i>
-        <i class="close-icon" data-lucide="x"></i>
-      </button>
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero" id="home">
+
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+
+    <div class="hero-inner">
+
+        <div class="hero-layout">
+
+
+            <div class="hero-copy reveal">
+
+                <div class="eyebrow">
+                    LOCAL SUPPLY & EQUIPMENT HIRE
+                </div>
+
+                <h1>
+                    YOU NEED IT.
+                    <span>WE'LL HELP YOU SORT IT.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Firewood, charcoal, chairs, trailers, mobile fridges
+                    and tents for homes, funerals, weddings, parties,
+                    events and business needs.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20need%20a%20quote."
+                        target="_blank"
+                        class="btn btn-primary">
+                        Get A WhatsApp Quote →
+                    </a>
+
+                    <a href="#services" class="btn btn-outline">
+                        Explore Services
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual reveal">
+
+                <img
+                    class="hero-photo"
+                    src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=85"
+                    alt="Equipment and construction">
+
+                <div class="hero-card">
+
+                    <div class="hero-card-number">
+                        6+
+                    </div>
+
+                    <p>
+                        Practical products and equipment
+                        available for hire and supply.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
     </div>
-  </header>
 
-  <main>
-    <section id="home" class="hero" aria-label="Tshigo Chego hero">
-      <img class="hero-bg" src="images/IMG-20260701-WA0005.jpg" alt="" aria-hidden="true">
-      <div class="hero-overlay"></div>
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <p class="eyebrow">Firewood, charcoal, Tent Hire, chairs, Trailer and Mobile Fridge</p>
-          <h1>TRAILER HIRE. EQUIPMENT RENTAL MADE EASY.</h1>
-          <p class="hero-lede">Reliable Local Supply And Hire For Funrals, Weddings, Events, Homes And Business Needs. Get Quality Products, Clean Equipment And Simple WhatsApp Service From First Quote To Delivery.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary btn-large" href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20please%20send%20me%20a%20quote.">
-              <i data-lucide="message-circle"></i>
-              Get a WhatsApp Quote
-            </a>
-            <a class="btn btn-outline btn-large" href="tel:0822026522">
-              <i data-lucide="phone-call"></i>
-              Call Now
-            </a>
-          </div>
-          <div class="hero-contact-row" aria-label="Quick contact numbers">
-            <a class="contact-pill" href="tel:0822026522">082 202 6522</a>
-            <a class="contact-pill" href="tel:0685183025">068 518 3025</a>
-            <a class="contact-pill" href="tel:0618141704">061 814 1704</a>
-          </div>
-        </div>
-      </div>
-    </section>
+</section>
 
-    <section class="trust-strip" aria-label="Trust highlights">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <i data-lucide="shield-check"></i>
-          <div>
-            <strong>Trusted Service</strong>
-            <span>Clear Quotes And Dependable Help.</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <i data-lucide="truck"></i>
-          <div>
-            <strong>Delivery Available</strong>
-            <span>Order, Hire And Arrange Transport Easily.</span>
-          </div>
-        </div>
-        <div class="trust-item">
-          <i data-lucide="message-circle"></i>
-          <div>
-            <strong>Easy To Contact</strong>
-            <span>Call Or WhatsApp From Any Section.</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="services" class="section services-section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-kicker">What we offer</p>
-          <h2>EQUIPMENTS AND HIRE SERVICE IN ONE SIMPLE PLACE</h2>
-          <p>Choose What You Need, Tap WhatsApp, And Ask For Pricing, Availability Or Delivery.</p>
+<!-- =====================================================
+     QUICK BAR
+===================================================== -->
+
+<section class="quick-bar">
+
+    <div class="quick-inner">
+
+        <div class="quick-item">
+
+            <div class="quick-icon">01</div>
+
+            <div>
+                <strong>Clear Quotes</strong>
+                <span>Know what you need before arranging.</span>
+            </div>
+
         </div>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213912_WhatsAppBusiness.jpg" loading="lazy" alt="Firewood service from Tshigo Chego">
-            </div>
-            <div class="service-body">
-              <p class="service-type">Best For Funrals And Big Events</p>
-              <h3>Firewood</h3>
-              <p>Steady Heat For Longer Cooking, Family Braais, Funrals And Event Catering.</p>
-              <button class="service-cta" type="button" data-service="Firewood">
-                <i data-lucide="message-circle"></i>
-                Ask For Firewood
-              </button>
-            </div>
-          </article>
 
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213834_WhatsAppBusiness.jpg" loading="lazy" alt="Briquettes service from Tshigo Chego">
-            </div>
-            <div class="service-body">
-              <p class="service-type">Braai Fuel</p>
-              <h3>Charcoal</h3>
-              <p>Fast-Lighting Charcoal For a Heavy, Hot Braai With Reliable Supply.</p>
-              <button class="service-cta" type="button" data-service="Briquettes">
-                <i data-lucide="message-circle"></i>
-                Ask for Charcoal
-              </button>
-            </div>
-          </article>
+        <div class="quick-item">
 
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213803_WhatsAppBusiness.jpg" loading="lazy" alt="Charcoal service from Tshigo Chego">
-            </div>
-            <div class="service-body">
-              <p class="service-type">Event Setups</p>
-              <h3>Chairs</h3>
-              <p>Comfortable, Stylish Chairs For Weddings, Funrals, Parties, And Corporate Events. Clean, Reliable, And Ready For Every Occasion.</p>
-              <button class="service-cta" type="button" data-service="Charcoal">
-                <i data-lucide="message-circle"></i>
-                Ask for Chairs
-              </button>
-            </div>
-          </article>
+            <div class="quick-icon">02</div>
 
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213922_WhatsAppBusiness.jpg" loading="lazy" alt="Trailer hire from Tshigo Chego">
+            <div>
+                <strong>Delivery Available</strong>
+                <span>Arrange transport with your order or hire.</span>
             </div>
-            <div class="service-body">
-              <p class="service-type">Equipment hire</p>
-              <h3>Trailer Hire</h3>
-              <p>Useful Trailers For Moving, Deliveries, Functions And General Transport.</p>
-              <button class="service-cta" type="button" data-service="Trailer hire">
-                <i data-lucide="message-circle"></i>
-                Ask for Trailer Hire
-              </button>
-            </div>
-          </article>
 
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213944_WhatsAppBusiness.jpg" loading="lazy" alt="Mobile fridge hire from Tshigo Chego">
-            </div>
-            <div class="service-body">
-              <p class="service-type">Equipment Hire</p>
-              <h3>Mobile Fridge Hire</h3>
-              <p>Keep Drinks, Food And Event Stock Cold With Long Lasting Mobile Fridge Hire.</p>
-              <button class="service-cta" type="button" data-service="Mobile fridge hire">
-                <i data-lucide="message-circle"></i>
-                Ask For Fridge Hire
-              </button>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-media">
-              <img src="images/Screenshot_20260701_213940_WhatsAppBusiness.jpg" loading="lazy" alt="Tent hire from Tshigo Chego">
-            </div>
-            <div class="service-body">
-              <p class="service-type">Event Hire</p>
-              <h3>Tent Hire</h3>
-              <p>Shade And Shelter For Parties, Outdoor Gatherings, Ceremonies And Events.</p>
-              <button class="service-cta" type="button" data-service="Tent hire">
-                <i data-lucide="message-circle"></i>
-                Ask For Tent Hire
-              </button>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about-section">
-      <div class="container about-grid">
-        <div class="about-copy">
-          <p class="section-kicker">Why customers choose us</p>
-          <h2>Professional service that still feels personal</h2>
-          <p>Tshigo Chego keeps ordering simple: clear contact options, helpful responses and practical products for everyday homes and bigger events.</p>
-          <p>Whether you need braai fuel, a trailer, a mobile fridge or a tent, the process is straightforward. Send a message, confirm what you need, and arrange collection or delivery.</p>
         </div>
 
-        <div class="proof-grid" aria-label="Service promises">
-          <div class="proof-item">
-            <i data-lucide="badge-check"></i>
-            <strong>Quality checked</strong>
-            <span>Products and hire items are presented cleanly and professionally.</span>
-          </div>
-          <div class="proof-item">
-            <i data-lucide="clock"></i>
-            <strong>Quick replies</strong>
-            <span>WhatsApp-first contact makes quotes and availability easy.</span>
-          </div>
-          <div class="proof-item">
-            <i data-lucide="map-pin"></i>
-            <strong>Local and reliable</strong>
-            <span>Built for nearby customers who need service they can reach.</span>
-          </div>
-          <div class="proof-item">
-            <i data-lucide="handshake"></i>
-            <strong>Honest support</strong>
-            <span>Helpful communication from the first question to the final handover.</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact" class="section contact-section">
-      <div class="container contact-grid">
-        <div class="contact-panel">
-          <p class="section-kicker">Contact us</p>
-          <h2>Ready to order or hire?</h2>
-          <p>Use WhatsApp for the fastest quote, or call any of the numbers below.</p>
+        <div class="quick-item">
 
-          <div class="contact-list">
-            <a href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20please%20send%20me%20a%20quote.">
-              <i data-lucide="message-circle"></i>
-              <span>WhatsApp 082 202 6522</span>
-            </a>
-            <a href="tel:0822026522">
-              <i data-lucide="phone"></i>
-              <span>Call 082 202 6522</span>
-            </a>
-            <a href="tel:0685183025">
-              <i data-lucide="phone"></i>
-              <span>Call 068 518 3025</span>
-            </a>
-            <a href="tel:0618141704">
-              <i data-lucide="phone"></i>
-              <span>Call 061 814 1704</span>
-            </a>
-          </div>
+            <div class="quick-icon">03</div>
+
+            <div>
+                <strong>Easy To Contact</strong>
+                <span>Call or WhatsApp from anywhere.</span>
+            </div>
+
         </div>
 
-        <form id="quote-form" class="form-panel">
-          <div class="form-grid">
-            <label>
-              <span>Your name</span>
-              <input id="name" name="name" type="text" autocomplete="name" placeholder="Your name">
-            </label>
-            <label>
-              <span>Contact number</span>
-              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="082 000 0000">
-            </label>
-          </div>
-          <label>
-            <span>What do you need?</span>
-            <select id="service" name="service">
-              <option value="Firewood">Firewood</option>
-              <option value="Briquettes">Chairs</option>
-              <option value="Charcoal">Charcoal</option>
-              <option value="Trailer hire">Trailer hire</option>
-              <option value="Mobile fridge hire">Mobile fridge hire</option>
-              <option value="Tent hire">Tent hire</option>
-              <option value="Other">Other</option>
-            </select>
-          </label>
-          <label>
-            <span>Message</span>
-            <textarea id="message" name="message" rows="4" placeholder="Tell us quantities, dates, delivery area or any details."></textarea>
-          </label>
-          <button class="btn btn-primary btn-submit" type="submit">
-            <i data-lucide="send"></i>
-            Send via WhatsApp
-          </button>
-          <p id="form-status" class="form-status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <strong>Tshigo Chego</strong>
-        <p>Firewood, briquettes, charcoal, trailer hire, mobile fridge hire and tent hire.</p>
-      </div>
-      <a class="footer-whatsapp" href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20I%20would%20like%20a%20quote.">
-        <i data-lucide="message-circle"></i>
-        WhatsApp Us
-      </a>
     </div>
-    <div class="container footer-bottom">
-      <span>&copy; <span id="year"></span> Tshigo Chego. All rights reserved.</span>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="section catalogue" id="services">
+
+    <div class="container">
+
+
+        <div class="section-head reveal">
+
+            <div>
+
+                <div class="section-label">
+                    WHAT WE OFFER
+                </div>
+
+                <h2>
+                    PICK WHAT<br>
+                    YOU NEED.
+                </h2>
+
+            </div>
+
+            <p>
+                From braai fuel to event equipment,
+                Tshigo Chego makes it easier to arrange
+                the practical things your occasion needs.
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- FIREWOOD -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85"
+                        alt="Firewood">
+
+                    <span class="product-tag">
+                        Funerals & Events
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Firewood</h3>
+
+                    <p>
+                        Steady heat for longer cooking,
+                        family braais, funerals and event catering.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20firewood."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHARCOAL -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=1000&q=85"
+                        alt="Charcoal braai">
+
+                    <span class="product-tag">
+                        Braai Fuel
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Charcoal</h3>
+
+                    <p>
+                        Fast-lighting charcoal for a hot,
+                        reliable braai.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20charcoal."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CHAIRS -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=85"
+                        alt="Event chairs">
+
+                    <span class="product-tag">
+                        Event Setup
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Chairs</h3>
+
+                    <p>
+                        Comfortable chairs for weddings,
+                        funerals, parties and corporate events.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20chair%20hire."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TRAILER -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?auto=format&fit=crop&w=1200&q=85"
+                        alt="Trailer and transport">
+
+                    <span class="product-tag">
+                        Equipment Hire
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Trailer Hire</h3>
+
+                    <p>
+                        Useful trailers for moving,
+                        deliveries, functions and general transport.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20trailer%20hire."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- MOBILE FRIDGE -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?auto=format&fit=crop&w=1000&q=85"
+                        alt="Mobile fridge">
+
+                    <span class="product-tag">
+                        Equipment Hire
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Mobile Fridge</h3>
+
+                    <p>
+                        Keep drinks, food and event stock
+                        cold with mobile fridge hire.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20mobile%20fridge%20hire."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TENT -->
+
+            <article class="product reveal">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?auto=format&fit=crop&w=1000&q=85"
+                        alt="Event tent">
+
+                    <span class="product-tag">
+                        Event Hire
+                    </span>
+
+                </div>
+
+                <div class="product-content">
+
+                    <h3>Tent Hire</h3>
+
+                    <p>
+                        Shade and shelter for parties,
+                        outdoor gatherings, ceremonies and events.
+                    </p>
+
+                    <div class="product-actions">
+
+                        <a
+                            class="small-btn whatsapp"
+                            href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20am%20interested%20in%20tent%20hire."
+                            target="_blank">
+                            WhatsApp
+                        </a>
+
+                        <a
+                            class="small-btn call"
+                            href="tel:+27822026522">
+                            Call
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
     </div>
-  </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/27822026522?text=Hi%20Tshigo%20Chego%2C%20I%20would%20like%20a%20quote." aria-label="WhatsApp Tshigo Chego">
-    <i data-lucide="message-circle"></i>
-    <span>WhatsApp</span>
-  </a>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-  <script>
-    (function () {
-      const WA_NUMBER = "27822026522";
-      const menuToggle = document.querySelector(".menu-toggle");
-      const siteMenu = document.getElementById("site-menu");
-      const form = document.getElementById("quote-form");
-      const status = document.getElementById("form-status");
-      const year = document.getElementById("year");
 
-      function whatsAppUrl(message) {
-        return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
-      }
+<!-- =====================================================
+     WHY US
+===================================================== -->
 
-      function openWhatsApp(message) {
-        window.open(whatsAppUrl(message), "_blank", "noopener,noreferrer");
-      }
+<section class="section feature-section" id="why-us">
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
-      }
+    <div class="container">
 
-      if (menuToggle && siteMenu) {
-        menuToggle.addEventListener("click", function () {
-          const isOpen = siteMenu.classList.toggle("is-open");
-          menuToggle.classList.toggle("is-open", isOpen);
-          menuToggle.setAttribute("aria-expanded", String(isOpen));
+        <div class="feature-layout">
+
+
+            <div class="feature-intro reveal">
+
+                <div class="section-label">
+                    WHY TSHIGO CHEGO
+                </div>
+
+                <h2>
+                    LESS STRESS.
+                    MORE GETTING
+                    THINGS DONE.
+                </h2>
+
+                <p>
+                    Whether you need braai fuel,
+                    equipment or event essentials,
+                    the process stays simple:
+                    ask, confirm and arrange.
+                </p>
+
+            </div>
+
+
+            <div class="feature-list">
+
+
+                <div class="feature reveal">
+
+                    <div class="feature-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>Professional Service</h3>
+
+                        <p>
+                            Professional service that still
+                            feels personal and approachable.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature reveal">
+
+                    <div class="feature-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>Quality Checked</h3>
+
+                        <p>
+                            Products and hire items are
+                            presented cleanly and professionally.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature reveal">
+
+                    <div class="feature-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>Quick Replies</h3>
+
+                        <p>
+                            WhatsApp-first contact makes
+                            quotes and availability easier to discuss.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature reveal">
+
+                    <div class="feature-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>Local & Reliable</h3>
+
+                        <p>
+                            Built for nearby customers who
+                            need a service they can actually reach.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="feature reveal">
+
+                    <div class="feature-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h3>Honest Support</h3>
+
+                        <p>
+                            Helpful communication from your
+                            first question to the final handover.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="section process" id="process">
+
+    <div class="container">
+
+
+        <div class="section-head reveal">
+
+            <div>
+
+                <div class="section-label">
+                    SIMPLE PROCESS
+                </div>
+
+                <h2>
+                    FROM NEED<br>
+                    TO READY.
+                </h2>
+
+            </div>
+
+            <p>
+                No complicated booking system.
+                Contact Tshigo Chego, tell us what you need,
+                confirm the details and arrange collection or delivery.
+            </p>
+
+        </div>
+
+
+        <div class="process-grid">
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Tell Us What You Need
+                </h3>
+
+                <p>
+                    WhatsApp or call and tell us what
+                    product or equipment you need.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Confirm Your Order
+                </h3>
+
+                <p>
+                    Discuss your requirements,
+                    availability and the arrangements.
+                </p>
+
+            </div>
+
+
+            <div class="process-card reveal">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Collect Or Arrange Delivery
+                </h3>
+
+                <p>
+                    Finalise the handover and get
+                    what you need when you need it.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BIG CTA
+===================================================== -->
+
+<section class="big-cta">
+
+    <div class="cta-box">
+
+        <div>
+
+            <h2>
+                HAVE AN EVENT?
+                NEED EQUIPMENT?
+            </h2>
+
+            <p>
+                Tell Tshigo Chego what you need
+                and get started with a quick enquiry.
+            </p>
+
+        </div>
+
+
+        <div class="cta-buttons">
+
+            <a
+                class="btn"
+                href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20would%20like%20to%20request%20a%20quote."
+                target="_blank">
+                WhatsApp For A Quote →
+            </a>
+
+            <a
+                class="btn secondary"
+                href="tel:+27822026522">
+                Call 082 202 6522
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-layout">
+
+
+            <div class="contact-info reveal">
+
+                <div class="section-label">
+                    GET IN TOUCH
+                </div>
+
+                <h2>
+                    READY TO
+                    ORDER OR HIRE?
+                </h2>
+
+                <p>
+                    Use WhatsApp for the fastest quote,
+                    or call any of the numbers below.
+                </p>
+
+
+                <div class="phone-list">
+
+
+                    <a class="phone" href="tel:+27822026522">
+
+                        <span>
+                            Main Contact
+                        </span>
+
+                        <strong>
+                            082 202 6522
+                        </strong>
+
+                    </a>
+
+
+                    <a class="phone" href="tel:+27685183025">
+
+                        <span>
+                            Call
+                        </span>
+
+                        <strong>
+                            068 518 3025
+                        </strong>
+
+                    </a>
+
+
+                    <a class="phone" href="tel:+27618141704">
+
+                        <span>
+                            Call
+                        </span>
+
+                        <strong>
+                            061 814 1704
+                        </strong>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="quote-form reveal">
+
+                <h3>
+                    Request A Quote
+                </h3>
+
+
+                <form id="quoteForm">
+
+
+                    <div class="form-row">
+
+                        <div class="field">
+
+                            <label>
+                                Your Name
+                            </label>
+
+                            <input
+                                id="name"
+                                type="text"
+                                placeholder="Your name"
+                                required>
+
+                        </div>
+
+
+                        <div class="field">
+
+                            <label>
+                                Contact Number
+                            </label>
+
+                            <input
+                                id="contactNumber"
+                                type="tel"
+                                placeholder="Your number"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            What Do You Need?
+                        </label>
+
+                        <select id="service" required>
+
+                            <option value="">
+                                Select a service
+                            </option>
+
+                            <option>
+                                Firewood
+                            </option>
+
+                            <option>
+                                Charcoal
+                            </option>
+
+                            <option>
+                                Chairs
+                            </option>
+
+                            <option>
+                                Trailer Hire
+                            </option>
+
+                            <option>
+                                Mobile Fridge Hire
+                            </option>
+
+                            <option>
+                                Tent Hire
+                            </option>
+
+                            <option>
+                                Multiple Services
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Tell us what you need, your event date or any other details..."
+                            required></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn submit-btn">
+                        Send Request On WhatsApp →
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="footer-inner">
+
+
+        <div class="footer-top">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    TSHIGO CHEGO
+                </h2>
+
+                <p>
+                    Firewood, briquettes, charcoal,
+                    trailer hire, mobile fridge hire
+                    and tent hire.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#why-us">
+                    Why Us
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego."
+                    target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="year"></span> Tshigo Chego.
+            </span>
+
+            <span>
+                Firewood & Equipment Hire
+            </span>
+
+        </div>
+
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     FLOATING WHATSAPP
+===================================================== -->
+
+<a
+    class="floating-whatsapp"
+    href="https://wa.me/27822026522?text=Hello%20Tshigo%20Chego,%20I%20would%20like%20to%20make%20an%20enquiry."
+    target="_blank"
+    aria-label="WhatsApp Tshigo Chego">
+
+    WA
+
+</a>
+
+
+<script>
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 40){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
+
+});
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+
+});
+
+
+document.querySelectorAll(".mobile-menu a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+
+    });
+
+});
+
+
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+const observer = new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
+
+            }
+
         });
 
-        siteMenu.querySelectorAll("a").forEach(function (link) {
-          link.addEventListener("click", function () {
-            siteMenu.classList.remove("is-open");
-            menuToggle.classList.remove("is-open");
-            menuToggle.setAttribute("aria-expanded", "false");
-          });
-        });
-      }
+    },
 
-      document.querySelectorAll("[data-service]").forEach(function (button) {
-        button.addEventListener("click", function () {
-          const service = button.getAttribute("data-service");
-          openWhatsApp("Hi Tshigo Chego, I would like a quote for " + service + ". Please send pricing and availability.");
-        });
-      });
+    {
+        threshold:.12
+    }
 
-      if (form && status) {
-        form.addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value.trim();
-          const phone = document.getElementById("phone").value.trim();
-          const service = document.getElementById("service").value;
-          const message = document.getElementById("message").value.trim();
+);
 
-          if (!name || !phone) {
-            status.textContent = "Please add your name and contact number.";
-            status.className = "form-status is-error";
-            return;
-          }
 
-          status.textContent = "Opening WhatsApp with your message.";
-          status.className = "form-status is-success";
-          openWhatsApp("Hi Tshigo Chego, please send me a quote.\nName: " + name + "\nContact: " + phone + "\nService: " + service + (message ? "\nMessage: " + message : ""));
-          form.reset();
-        });
-      }
+document.querySelectorAll(".reveal").forEach(element => {
 
-      if (window.lucide) {
-        window.lucide.createIcons({ attrs: { "stroke-width": 2 } });
-      }
-    }());
-  </script>
+    observer.observe(element);
+
+});
+
+
+/* =========================================================
+   WHATSAPP QUOTE FORM
+========================================================= */
+
+const quoteForm = document.getElementById("quoteForm");
+
+quoteForm.addEventListener("submit", function(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("name").value.trim();
+
+    const contact =
+        document.getElementById("contactNumber").value.trim();
+
+    const service =
+        document.getElementById("service").value;
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    const whatsappMessage =
+`Hello Tshigo Chego,
+
+I would like to request a quote.
+
+Name: ${name}
+
+Contact Number: ${contact}
+
+Service: ${service}
+
+Message:
+${message}`;
+
+
+    const url =
+        "https://wa.me/27822026522?text=" +
+        encodeURIComponent(whatsappMessage);
+
+
+    window.open(url, "_blank");
+
+});
+
+
+/* =========================================================
+   YEAR
+========================================================= */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
 </body>
 </html>
